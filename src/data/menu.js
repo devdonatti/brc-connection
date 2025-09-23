@@ -1,0 +1,12 @@
+export const menuItems = [
+  { id: 1, label: "Home", href: "#" },
+  { id: 2, label: "Galería de Fotos", href: "#" },
+  { id: 3, label: "BRC Eventos", href: "#" },
+  { id: 4, label: "Centros Turísticos", href: "#" },
+  { id: 5, label: "Datos de Interés", href: "#" },
+  { id: 6, label: "Contacto", href: "#" },
+  { id: 7, label: "Argentina at Night", href: "#" },
+  { id: 8, label: "Eventos Especiales", href: "#" },
+  { id: 9, label: "Hospedaje", href: "#" },
+  { id: 10, label: "Excursiones", href: "#" },
+];
