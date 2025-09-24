@@ -9,4 +9,9 @@ export const menuItems = [
   { id: 8, label: "Eventos Especiales", href: "#" },
   { id: 9, label: "Hospedaje", href: "#" },
   { id: 10, label: "Excursiones", href: "#" },
+  { id: 11, label: "Bariloche at night", href: "#" },
+  { id: 12, label: "Villa Carlos Paz at night", href: "#" },
+  { id: 13, label: "Agencia de Viajes", href: "#" },
+  { id: 14, label: "Restaurantes and restó", href: "#" },
+  { id: 15, label: "Brc Contactos", href: "#" },
 ];
