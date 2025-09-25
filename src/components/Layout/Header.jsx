@@ -1,3 +1,4 @@
+// src/components/Layout/Header.jsx
 import React, { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -14,10 +15,11 @@ export default function Header() {
   const regiones = ["Buenos Aires", "San Carlos de Bariloche", "Rosario"];
 
   return (
-    <header className="sticky top-0 z-[9999] bg-gray-400/90 backdrop-blur-sm border-b border-white/5">
-      {/* Contenedor principal */}
-      <div className="flex justify-center">
-        <div className="w-full max-w-[1200px] flex items-center justify-center p-2 md:p-3 relative">
+    // header ahora ocupa el 100% del ancho del viewport pero NO impone max-w.
+    <header className="sticky p-2 top-0 z-[9999] bg-gray-400/90 backdrop-blur-sm border-b border-white/5">
+      {/* Contenedor interior (su anchura la controla el padre — Home) */}
+      <div className="flex items-center justify-center p-2 md:p-3 relative">
+        <div className="w-full flex items-center justify-center relative">
           {/* Menú desktop */}
           <nav className="hidden md:flex gap-4 text-sm text-white/90 relative z-[9999]">
             {links.map((link, i) => (
@@ -63,10 +65,10 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Menú móvil desplegable */}
+      {/* Menú móvil desplegable (aparecerá alineado con el ancho del padre) */}
       {open && (
-        <div className="md:hidden flex justify-center">
-          <div className="w-full max-w-[1200px] bg-gray-500/95 border-t border-white/5 shadow-md z-[9999]">
+        <div className="md:hidden">
+          <div className="w-full bg-gray-500/95 border-t border-white/5 shadow-md z-[9999]">
             <nav className="flex flex-col items-center gap-2 py-3 text-white/90">
               {links.map((link, i) => (
                 <a

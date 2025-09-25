@@ -8,22 +8,22 @@ export default function BannerCard({ item }) {
       {item.video ? (
         <video
           ref={videoRef}
-          src={item.video} // ej: "/videos/promo.mp4" en public/
-          poster={item.img} // fallback
+          src={item.video}
+          poster={item.img}
           controls
           muted
           playsInline
-          className="w-full h-40 object-cover"
+          className="w-full h-auto object-contain md:h-40 md:object-cover"
         />
       ) : (
         <img
           src={item.img}
           alt={item.title}
-          className="w-full h-40 object-cover"
+          className="w-full h-auto object-contain md:h-40 md:object-cover"
         />
       )}
 
-      <div className="p-2">
+      <div className="">
         <h3 className="text-sm font-semibold">{item.title}</h3>
         <p className="text-xs text-white/60">{item.text}</p>
       </div>
