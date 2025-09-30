@@ -5,6 +5,15 @@ import BannerCard from "../BannerCard"; // asumimos que tienes este componente
 export default function SidebarLeft() {
   return (
     <aside className="hidden lg:block">
+      <div className="mt-2">
+        <BannerCard
+          item={{
+            id: "sidebar-banner",
+
+            img: "/1 (4).jpeg", // cambia por tu imagen de banner
+          }}
+        />
+      </div>
       <div className="bg-black/50 p-3 rounded shadow-inner text-sm text-white/90 flex flex-col gap-3">
         {/* Input de búsqueda */}
         <input

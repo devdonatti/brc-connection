@@ -21,7 +21,7 @@ export default function Home() {
             - sm:     max-w-[640px]
             - md+:    max-w-[1000px] (tu ancho de escritorio)
         */}
-        <div className="w-full max-w-[360px] sm:max-w-[640px] md:max-w-[1000px] mx-auto">
+        <div className="w-full max-w-[360px] sm:max-w-[640px] md:max-w-[1100px] mx-auto">
           {/* Logo y Header ahora comparten el mismo ancho / padding */}
           <div className="">
             <Logo />
@@ -32,7 +32,7 @@ export default function Home() {
 
       {/* Contenedor principal del contenido (mismo max-w y centrado) */}
       <div className="w-full flex justify-center px-4">
-        <div className="w-full max-w-[340px] sm:max-w-[300px] md:max-w-[1000px] mx-auto bg-gray-300/80 backdrop-blur-sm shadow-lg p-4 md:p-6">
+        <div className="w-full max-w-[340px] sm:max-w-[300px] md:max-w-[1100px] mx-auto bg-white backdrop-blur-sm shadow-lg p-4 md:p-6">
           <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,240px)_1fr_minmax(0,200px)] gap-6">
             {/* Sidebar izquierdo */}
             <div className="hidden lg:block">
@@ -46,23 +46,24 @@ export default function Home() {
               <Hero image="/portada.jpg" />
 
               {/* Barra de enlaces entre Hero y Destacados */}
-              <div className="mt-4 mb-4 flex justify-center gap-4 bg-black/30 p-2 rounded shadow text-sm text-white/90">
+              <div className=" flex justify-center gap-4 bg-black/30 p-2 rounded shadow text-sm text-white/90">
                 <a
                   href="#contacto"
                   className="px-3 py-1 rounded hover:bg-white/10 transition"
                 >
                   Contacto
                 </a>
+
                 <a
                   href="#chat"
-                  className="px-3 py-1 rounded hover:bg-white/10 transition"
+                  className="px-3 py-1 rounded  hover:bg-white/10 transition border-l border-white/30 pl-4"
                 >
                   Chat
                 </a>
               </div>
 
               {/* Banners: 2/3 + 1/3 */}
-              <div className="grid grid-cols-3 gap-2 pb-2">
+              <div className="grid grid-cols-3 mt-2 gap-2 pb-2">
                 <div className="col-span-2">
                   <BannerCard
                     item={{
@@ -80,15 +81,19 @@ export default function Home() {
                   />
                 </div>
               </div>
+              <div className=" flex items-center justify-center gap-4 bg-white p-2 rounded shadow text-sm text-black">
+                <h1>Lo esperaste durante tantos años</h1>
+                <img className="h-16 w-16" src="logoo.png" alt="" />
+              </div>
 
               {/* Sección Destacados */}
-              <div className="rounded p-4 bg-black/30">
+              <div className="rounded p-4 bg-white">
                 <FeaturedGrid items={banners} />
               </div>
 
               {/* Repetición de banners debajo (igual comportamiento) */}
               <div className="grid grid-cols-3 gap-2 pt-2">
-                <div className="col-span-2">
+                <div className="col-span-3">
                   <BannerCard
                     item={{
                       id: "banner-grande-2",
@@ -96,18 +101,13 @@ export default function Home() {
                     }}
                   />
                 </div>
-                <div className="col-span-1">
-                  <BannerCard
-                    item={{
-                      id: "banner-chico-2",
-                      img: "/facebook.jpg",
-                    }}
-                  />
-                </div>
+              </div>
+              <div className=" flex justify-center gap-4 bg-black/30 p-2 rounded shadow text-sm text-white/90">
+                <h1>Bariloche At Night</h1>
               </div>
 
               {/* Imagen de boliches (asegurate que esta <img> sea responsive) */}
-              <div className="mt-6">
+              <div className="">
                 <img
                   className="w-full h-auto rounded shadow object-cover"
                   src="/bolichesbrc.jpg"

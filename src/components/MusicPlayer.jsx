@@ -94,26 +94,26 @@ export default function MusicPlayer() {
         </button>
         <button
           onClick={handlePlay}
-          className="bg-green-500 hover:bg-green-400 text-white rounded-full p-2 shadow-md transition text-xs"
+          className="bg-gray-500 hover:bg-green-400 text-white rounded-full p-2 shadow-md transition text-xs"
         >
           ▶️
         </button>
         <button
           onClick={handlePause}
-          className="bg-yellow-500 hover:bg-yellow-400 text-white rounded-full p-2 shadow-md transition text-xs"
+          className="bg-gray-500 hover:bg-yellow-400 text-white rounded-full p-2 shadow-md transition text-xs"
         >
           ⏸
         </button>
         <button
           onClick={handleNext}
-          className="bg-blue-500 hover:bg-blue-400 text-white rounded-full p-2 shadow-md transition text-xs"
+          className="bg-gray-500 hover:bg-blue-400 text-white rounded-full p-2 shadow-md transition text-xs"
         >
           ⏭
         </button>
       </div>
 
       {/* Mensaje de error */}
-      {error && <div className="text-red-400 text-xs text-center">{error}</div>}
+      {error && <div className="text-gray text-xs text-center">{error}</div>}
 
       <audio ref={audioRef} className="hidden">
         <source src={tracks[index].file} type="audio/mpeg" />
