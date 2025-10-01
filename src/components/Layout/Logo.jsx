@@ -10,13 +10,13 @@ export default function Logo() {
          md:mt-0"
         >
           <img
-            className="h-20 w-auto md:h-32" // más chico en mobile
-            src="/logoo.png"
+            className="h-19 w-auto md:h-19" // más chico en mobile
+            src="/fotos/logoo.png"
             alt="logo principal"
           />
           <img
             className="h-10 w-auto -ml-0.5 md:h-16" // más chico en mobile
-            src="/conectt.png"
+            src="/fotos/conectt.png"
             alt="texto logo"
           />
         </div>

@@ -11,26 +11,26 @@ export default function Header() {
   const links = [
     {
       label: "Argentina at Night",
-      href: "#",
+      path: "/argentinanight",
       submenu: [
-        { label: "Argentina At night", path: "/" },
         { label: "Bariloche at night", path: "/brcnight" },
-        { label: "Rosario At night", path: "/" }, // ruta a Rosarionight
+        { label: "Rosario At night", path: "/" },
+        { label: "Villa Carlos Paz At night", path: "/" },
       ],
     },
     {
       label: "Centros Turísticos",
-      href: "#",
+      path: "#",
       submenu: [
         { label: "Buenos Aires", path: "/" },
-        { label: "Bariloche ", path: "/HeroBanner" },
+        { label: "Bariloche", path: "/herobanner" },
         { label: "Rosario", path: "/" },
       ],
     },
-    { label: "Restaurante & Resto", path: "/" },
+    { label: "Restaurante & Resto", path: "/restos" },
     {
       label: "Regiones de la Argentina",
-      href: "#",
+      path: "#",
       submenu: [
         { label: "Buenos Aires", path: "/" },
         { label: "San Carlos de Bariloche", path: "/" },
@@ -38,6 +38,12 @@ export default function Header() {
       ],
     },
   ];
+
+  const handleNavigate = (path) => {
+    if (!path || path === "#") return;
+    navigate(path);
+    setOpen(false); // cierra menú móvil si estaba abierto
+  };
 
   return (
     <header className="sticky top-0 z-[9999] bg-gray-400/90 backdrop-blur-sm">
@@ -54,34 +60,26 @@ export default function Header() {
                 }
                 onMouseLeave={() => setSubmenuIndex(null)}
               >
-                <a
-                  href={link.href}
-                  className="flex items-center justify-center gap-1 hover:text-accent transition px-4 py-3"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (!link.submenu) navigate(link.path || "/");
-                  }}
+                {/* Link principal */}
+                <button
+                  className="flex items-center justify-center gap-1 hover:text-accent transition px-4 py-3 w-full cursor-pointer"
+                  onClick={() => handleNavigate(link.path)}
                 >
                   {link.label}
                   {link.submenu && <ChevronDown size={14} />}
-                </a>
+                </button>
 
                 {/* Submenu */}
                 {link.submenu && submenuIndex === i && (
                   <div className="absolute top-full left-0 w-full bg-gray-700/95 rounded-b shadow-lg flex flex-col z-[9999]">
                     {link.submenu.map((item, j) => (
-                      <a
+                      <button
                         key={j}
-                        href={item.path}
-                        className="px-3 py-2 hover:bg-white/10 transition text-white/90 text-sm"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          navigate(item.path);
-                          setOpen(false); // cierra menú mobile si estaba abierto
-                        }}
+                        className="px-3 py-2 hover:bg-white/10 transition text-white/90 text-sm text-left w-full cursor-pointer"
+                        onClick={() => handleNavigate(item.path)}
                       >
                         {item.label}
-                      </a>
+                      </button>
                     ))}
                   </div>
                 )}
@@ -108,38 +106,29 @@ export default function Header() {
             <nav className="flex flex-col items-center gap-2 py-3 text-white/90">
               {links.map((link, i) => (
                 <div key={i} className="w-full text-center">
-                  <a
-                    href={link.path}
-                    className="block w-full py-1 text-sm hover:text-accent transition"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      if (!link.submenu) navigate(link.path || "/");
-                      setOpen(false);
-                    }}
-                  >
-                    {link.label}
-                  </a>
-
-                  {/* Submenu mobile */}
-                  {link.submenu && (
+                  {/* Link directo */}
+                  {!link.submenu ? (
+                    <button
+                      className="block w-full py-1 text-sm hover:text-accent transition cursor-pointer"
+                      onClick={() => handleNavigate(link.path)}
+                    >
+                      {link.label}
+                    </button>
+                  ) : (
+                    // Submenu mobile
                     <details className="w-full">
                       <summary className="px-3 py-1 text-sm cursor-pointer hover:bg-white/10 rounded text-center">
                         Ver {link.label}
                       </summary>
                       <div className="flex flex-col gap-1 mt-1">
                         {link.submenu.map((item, j) => (
-                          <a
+                          <button
                             key={j}
-                            href={item.path}
-                            className="px-3 py-1 text-sm hover:bg-white/10 rounded text-center"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              navigate(item.path);
-                              setOpen(false);
-                            }}
+                            className="px-3 py-1 text-sm hover:bg-white/10 rounded text-center cursor-pointer"
+                            onClick={() => handleNavigate(item.path)}
                           >
                             {item.label}
-                          </a>
+                          </button>
                         ))}
                       </div>
                     </details>

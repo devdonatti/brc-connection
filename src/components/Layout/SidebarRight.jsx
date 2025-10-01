@@ -2,11 +2,11 @@ import React from "react";
 
 export default function SidebarRight() {
   const ads = [
-    "/1 (1).jpeg",
-    "/1 (2).jpeg",
-    "/1 (3).jpeg",
-    "/1 (4).jpeg",
-    "/1 (5).jpeg",
+    "/fotos/publicidad/1 (1).jpeg",
+    "/fotos/publicidad/1 (2).jpeg",
+    "/fotos/publicidad/1 (3).jpeg",
+    "/fotos/publicidad/1 (4).jpeg",
+    "/fotos/publicidad/1 (5).jpeg",
   ];
 
   return (

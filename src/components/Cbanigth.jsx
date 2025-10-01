@@ -11,7 +11,6 @@ const images = [
 
 export default function Carousel3D() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [started, setStarted] = useState(false); // Para overlay de Play
 
   // Auto-slide cada 3 segundos
   useEffect(() => {
@@ -20,17 +19,6 @@ export default function Carousel3D() {
     }, 3000);
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  // Cargar script de TikTok al renderizar
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://www.tiktok.com/embed.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
   }, []);
 
   const prevSlide = () => {
@@ -98,49 +86,34 @@ export default function Carousel3D() {
         </button>
       </div>
 
-      {/* Video de Facebook */}
-      <div className="w-full max-w-[600px] mt-10 mb-10">
-        <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-lg shadow-lg">
-          <iframe
-            title="Facebook Video"
-            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F?v=1302251373953487&show_text=false"
-            className="absolute top-0 left-0 w-full h-full border-0"
-            allow="autoplay; encrypted-media; picture-in-picture; web-share"
-            allowFullScreen
-          />
-          {!started && (
-            <button
-              onClick={() => setStarted(true)}
-              className="absolute inset-0 flex items-center justify-center bg-black/50 hover:bg-black/60 transition"
-            >
-              <div className="w-20 h-20 bg-gray-900/70 text-white rounded-full flex items-center justify-center text-3xl shadow-lg">
-                ▶
-              </div>
-            </button>
-          )}
-        </div>
+      {/* Primer Video de Facebook */}
+      <div className="w-full max-w-[267px] mt-10 mb-10">
+        <iframe
+          src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2446444085725579%2F&show_text=false&width=267&t=0"
+          width="267"
+          height="476"
+          style={{ border: "none", overflow: "hidden" }}
+          scrolling="no"
+          frameBorder="0"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          allowFullScreen
+          title="Facebook Video 1"
+        />
       </div>
 
-      {/* Video de TikTok */}
-      <div className="w-full max-w-[605px] mt-10 mb-10">
-        <blockquote
-          className="tiktok-embed"
-          cite="https://www.tiktok.com/@travelrockoficial/video/7543808966908824850"
-          data-video-id="7543808966908824850"
-          style={{ maxWidth: "605px", minWidth: "325px" }}
-        >
-          <section>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              title="@travelrockoficial"
-              href="https://www.tiktok.com/@travelrockoficial?refer=embed"
-            >
-              @travelrockoficial
-            </a>{" "}
-            Día de cerro catedral en nuestra pista exclusiva 🤯🖤🤪
-          </section>
-        </blockquote>
+      {/* Segundo Video de Facebook */}
+      <div className="w-full max-w-[267px] mt-10 mb-10">
+        <iframe
+          src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2446444085725579%2F&show_text=false&width=267&t=0"
+          width="267"
+          height="476"
+          style={{ border: "none", overflow: "hidden" }}
+          scrolling="no"
+          frameBorder="0"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          allowFullScreen
+          title="Facebook Video 2"
+        />
       </div>
     </div>
   );

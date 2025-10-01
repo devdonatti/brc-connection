@@ -43,7 +43,7 @@ export default function Home() {
             <main className="order-2 lg:order-1">
               {/* Asegurate que tu componente Hero haga la imagen responsive.
                   Si no, reemplaza o ajusta Hero para que la <img> tenga: w-full h-auto object-cover */}
-              <Hero image="/portada.jpg" />
+              <Hero image="/fotos/publicidad/portada.jpg" />
 
               {/* Barra de enlaces entre Hero y Destacados */}
               <div className=" flex justify-center gap-4 bg-black/30 p-2 rounded shadow text-sm text-white/90">
@@ -68,7 +68,7 @@ export default function Home() {
                   <BannerCard
                     item={{
                       id: "banner-grande",
-                      img: "/1 (4).jpeg",
+                      img: "/fotos/publicidad/1 (4).jpeg",
                     }}
                   />
                 </div>
@@ -76,14 +76,14 @@ export default function Home() {
                   <BannerCard
                     item={{
                       id: "banner-chico",
-                      img: "/facebook.jpg",
+                      img: "/fotos/publicidad/facebook.jpg",
                     }}
                   />
                 </div>
               </div>
               <div className=" flex items-center justify-center gap-4 bg-white p-2 rounded shadow text-sm text-black">
                 <h1>Lo esperaste durante tantos años</h1>
-                <img className="h-16 w-16" src="logoo.png" alt="" />
+                <img className="h-16 w-16" src="fotos/logoo.png" alt="" />
               </div>
 
               {/* Sección Destacados */}
@@ -97,7 +97,7 @@ export default function Home() {
                   <BannerCard
                     item={{
                       id: "banner-grande-2",
-                      img: "/1 (4).jpeg",
+                      img: "/fotos/publicidad/1 (4).jpeg",
                     }}
                   />
                 </div>
@@ -110,7 +110,7 @@ export default function Home() {
               <div className="">
                 <img
                   className="w-full h-auto rounded shadow object-cover"
-                  src="/bolichesbrc.jpg"
+                  src="/fotos/boliches/bolichesbrc.jpg"
                   alt="Discotecas de Bariloche"
                 />
               </div>

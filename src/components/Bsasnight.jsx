@@ -120,28 +120,6 @@ export default function Carousel3D() {
           )}
         </div>
       </div>
-
-      {/* Video de TikTok */}
-      <div className="w-full max-w-[605px] mt-10 mb-10">
-        <blockquote
-          className="tiktok-embed"
-          cite="https://www.tiktok.com/@travelrockoficial/video/7543808966908824850"
-          data-video-id="7543808966908824850"
-          style={{ maxWidth: "605px", minWidth: "325px" }}
-        >
-          <section>
-            <a
-              target="_blank"
-              rel="noreferrer"
-              title="@travelrockoficial"
-              href="https://www.tiktok.com/@travelrockoficial?refer=embed"
-            >
-              @travelrockoficial
-            </a>{" "}
-            Día de cerro catedral en nuestra pista exclusiva 🤯🖤🤪
-          </section>
-        </blockquote>
-      </div>
     </div>
   );
 }

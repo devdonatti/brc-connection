@@ -1,16 +1,5 @@
-// src/components/HeroBanner.jsx
-import React from "react";
-
-/**
- * Props:
- * - mainImage: string (ruta de la imagen principal)
- * - thumbnails: array of { src, alt } (las 3 miniaturas circulares)
- * - leftLogo: string (logo pequeño arriba-izq)
- * - rightLogo: string (logo vertical o pequeño a la derecha)
- * - caption: string (texto bajo las miniaturas)
- */
 export default function HeroBanner({
-  mainImage = "/portada.jpg",
+  mainImage = "/fotos/publicidad/portada.jpg",
   thumbnails = [],
   leftLogo,
   rightLogo,
