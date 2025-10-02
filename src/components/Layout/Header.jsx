@@ -15,7 +15,7 @@ export default function Header() {
       submenu: [
         { label: "Bariloche at night", path: "/brcnight" },
         { label: "Rosario At night", path: "/" },
-        { label: "Villa Carlos Paz At night", path: "/" },
+        { label: "Villa Carlos Paz At night", path: "/cbanight" },
       ],
     },
     {

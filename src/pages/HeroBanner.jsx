@@ -1,85 +1,104 @@
-export default function HeroBanner({
-  mainImage = "/fotos/publicidad/portada.jpg",
-  thumbnails = [],
-  leftLogo,
-  rightLogo,
-  caption,
-}) {
+// src/components/RegionHeroCordoba.jsx
+import React from "react";
+
+export default function RegionHeroCordoba() {
+  const bg = "/fotos/regiones/cordoba.jpg"; // imagen en public/fotos/regiones/cordoba.jpg
+
   return (
-    <section className="relative w-full overflow-hidden">
-      {/* Imagen principal */}
-      <img
-        src={mainImage}
-        alt={caption || "Hero image"}
-        className="w-full h-56 sm:h-72 md:h-96 object-cover"
-      />
+    <section className="w-screen h-screen overflow-hidden">
+      <div className="relative w-full h-full overflow-hidden">
+        {/* Fondo */}
+        <div
+          className="absolute inset-0 bg-center bg-cover bg-no-repeat"
+          style={{ backgroundImage: `url('${bg}')` }}
+        />
 
-      {/* Overlay curvo (SVG) encima de la imagen para crear la franja negra curva */}
-      <div className="absolute inset-x-0 bottom-0 pointer-events-none">
-        <svg
-          viewBox="0 0 1440 200"
-          className="w-full h-[100px] md:h-[140px] lg:h-[180px]"
-          preserveAspectRatio="none"
-        >
-          {/* curva negra */}
-          <path
-            d="M0,120 C240,200 480,0 720,60 C960,120 1200,80 1440,140 L1440,200 L0,200 Z"
-            fill="rgba(8,8,10,0.85)"
-          />
-        </svg>
-      </div>
-
-      {/* Logos superpuestos */}
-      {leftLogo && (
-        <div className="absolute left-4 top-4 hidden sm:block">
-          <img src={leftLogo} alt="left logo" className="h-12 object-contain" />
+        {/* Banda curva inferior */}
+        <div className="absolute left-0 right-0 bottom-0">
+          <svg
+            viewBox="0 0 1200 200"
+            preserveAspectRatio="none"
+            className="w-full h-32 md:h-44 lg:h-56"
+          >
+            <path
+              d="M0,40 C200,120 400,100 600,120 C800,140 1000,120 1200,40 L1200,200 L0,200 Z"
+              fill="#06070a"
+              opacity="0.95"
+            />
+          </svg>
         </div>
-      )}
 
-      {rightLogo && (
-        <div className="absolute right-2 top-6 hidden md:block">
-          <img
-            src={rightLogo}
-            alt="right logo"
-            className="h-20 object-contain transform rotate-0"
-          />
-        </div>
-      )}
-
-      {/* Miniaturas circulares centradas (sobre la franja) */}
-      <div className="absolute left-0 right-0 -bottom-6 flex justify-center items-end pointer-events-auto">
-        <div className="flex items-center gap-3 bg-transparent px-2">
-          {thumbnails.length > 0 ? (
-            thumbnails.map((t, i) => (
-              <div
-                key={i}
-                className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden border-4 border-white/20 bg-white/5 shadow-lg"
-              >
+        {/* Elementos principales */}
+        <div className="absolute inset-0 flex items-end justify-center pb-6 md:pb-10 lg:pb-14">
+          <div className="w-full max-w-[1200px] px-4 flex items-end justify-between">
+            {/* Logo izquierdo */}
+            <div className="hidden sm:flex items-center gap-3">
+              <div className="flex items-center justify-center w-16 h-16 rounded-full bg-white/10 p-2">
                 <img
-                  src={t.src}
-                  alt={t.alt || `thumb-${i}`}
-                  className="w-full h-full object-cover"
+                  src="/fotos/logoo.png"
+                  alt="logo"
+                  className="w-full h-full object-contain"
                 />
               </div>
-            ))
-          ) : (
-            <div className="text-white/60 text-sm">Miniaturas aquí</div>
-          )}
+              <div className="text-sm text-gray-200">connection.com</div>
+            </div>
+
+            {/* Miniaturas centro */}
+            <div className="flex flex-col items-center gap-3">
+              <div className="flex items-center gap-4">
+                {[
+                  "/fotos/regiones/cordoba.jpg",
+                  "/fotos/regiones/cordoba.jpg",
+                  "/fotos/regiones/cordoba.jpg",
+                  "/fotos/regiones/cordoba.jpg",
+                ].map((src, i) => (
+                  <div
+                    key={i}
+                    className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full overflow-hidden shadow-lg border-2 border-white/30 bg-white/5"
+                  >
+                    <img
+                      src={src}
+                      alt={`miniatura ${i + 1}`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                ))}
+              </div>
+              <p className="text-xs sm:text-sm md:text-base text-gray-200/90">
+                Bariloche, ¡Quiero estar ahí!
+              </p>
+            </div>
+
+            {/* Logo derecho */}
+            <div className="hidden md:flex items-center gap-3">
+              <div className="text-sm text-gray-200">RIO</div>
+              <div className="w-16 h-12 md:w-20 md:h-14 flex items-center justify-center bg-white/5 rounded">
+                <img
+                  src="/fotos/conectt.png"
+                  alt="sello"
+                  className="max-h-full object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Puntos de colores inferiores */}
+        <div className="absolute left-6 bottom-6 flex gap-2 items-center">
+          <div className="w-3 h-3 rounded-full bg-red-400 shadow-sm" />
+          <div className="w-3 h-3 rounded-full bg-green-400 shadow-sm" />
+          <div className="w-3 h-3 rounded-full bg-blue-400 shadow-sm" />
+        </div>
+
+        {/* Badge vertical derecho */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 pr-2">
+          <div className="hidden lg:block rotate-90 origin-right">
+            <div className="bg-blue-600 text-white text-xs px-3 py-1 rounded-l-full shadow-md">
+              connection.com
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* Texto/caption en la franja (debajo de las miniaturas) */}
-      <div className="absolute left-0 right-0 bottom-0 pb-4 md:pb-6 text-center">
-        <div className="max-w-[900px] mx-auto px-4">
-          <p className="text-white/80 text-sm md:text-base">
-            {caption ||
-              "San Martín de los Andes es el lugar, Chapelco es la montaña."}
-          </p>
-        </div>
-      </div>
-
-      {/* Espacio extra para que no tape el contenido siguiente por las miniaturas */}
-      <div className="h-10 md:h-14" />
     </section>
   );
 }

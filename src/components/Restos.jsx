@@ -2,6 +2,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
+/**
+ * Argentinanight — versión con soporte a iframes (Facebook) en photos
+ * - clubsByRegion: ahora los iframes se describen como objetos { type: 'iframe', src, width, height, allow }
+ * - Modal: renderiza imagen o iframe según el tipo
+ * - Requisitos: Tailwind CSS
+ */
+
 const clubsByRegion = {
   Rosario: [
     {
@@ -22,6 +29,17 @@ const clubsByRegion = {
         "/fotos/restos/roquefeller/rockf7.jpg",
         "/fotos/restos/roquefeller/rockf8.jpg",
         "/fotos/restos/roquefeller/rockf9.jpg",
+        // descriptor de iframe para el video de Facebook (NO JSX aquí)
+        {
+          type: "iframe",
+          provider: "facebook",
+          // URL embebible de Facebook (usa la que te da Facebook en "embed")
+          src: "https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2275025599601256%2F&width=267&show_text=false",
+          width: 267,
+          height: 476,
+          allow:
+            "autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share",
+        },
       ],
     },
   ],
@@ -46,6 +64,7 @@ export default function Argentinanight() {
 
   // autoplay featured subtle
   useEffect(() => {
+    if (!featuredClubs.length) return;
     featuredTimer.current = setInterval(() => {
       setFeaturedIndex((i) => (i + 1) % featuredClubs.length);
     }, 4000);
@@ -161,7 +180,6 @@ export default function Argentinanight() {
             <div className="mt-4 flex justify-center gap-3">
               <button
                 onClick={() => {
-                  // scroll a sección Bariloche
                   const el = document.querySelector(
                     "[data-region='Bariloche']"
                   );
@@ -174,7 +192,6 @@ export default function Argentinanight() {
               </button>
               <button
                 onClick={() => {
-                  // scroll a sección Bariloche
                   const el = document.querySelector("[data-region='Rosario']");
                   if (el)
                     el.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -185,7 +202,6 @@ export default function Argentinanight() {
               </button>
               <button
                 onClick={() => {
-                  // scroll a sección Cordoba
                   const el = document.querySelector("[data-region='Cordoba']");
                   if (el)
                     el.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -251,7 +267,7 @@ export default function Argentinanight() {
                               {club.name}
                             </div>
                             <div className="text-xs text-gray-200/80">
-                              Experiencias nocturnas
+                              Experiencias gastronómicas
                             </div>
                           </div>
                         </div>
@@ -266,9 +282,6 @@ export default function Argentinanight() {
       </section>
       {/* REGIONES: filas horizontales centradas con snap — grid en pantallas grandes */}
       {Object.entries(clubsByRegion).map(([region, clubs]) => {
-        // DEBUG: quitar cuando confirmes que hay 5
-        // console.log(region, clubs.length, clubs.map(c => c.name));
-
         return (
           <section key={region} data-region={region} className="mb-12">
             <div className="flex items-baseline justify-between mb-4">
@@ -392,7 +405,7 @@ export default function Argentinanight() {
               ×
             </button>
 
-            {/* Image area */}
+            {/* Image / iframe area */}
             <div
               className="h-full flex items-center justify-center relative bg-black"
               onTouchStart={handleTouchStart}
@@ -408,11 +421,52 @@ export default function Argentinanight() {
               </button>
 
               <div className="max-w-full max-h-full p-4 flex items-center justify-center">
-                <img
-                  src={modalClub.photos[photoIndex]}
-                  alt={`${modalClub.name} ${photoIndex + 1}`}
-                  className="max-w-full max-h-[75vh] object-contain rounded"
-                />
+                {(() => {
+                  const item = modalClub.photos[photoIndex];
+
+                  // caso: string => imagen
+                  if (typeof item === "string") {
+                    return (
+                      <img
+                        src={item}
+                        alt={`${modalClub.name} ${photoIndex + 1}`}
+                        className="max-w-full max-h-[75vh] object-contain rounded"
+                      />
+                    );
+                  }
+
+                  // caso: descriptor de iframe
+                  if (item && item.type === "iframe") {
+                    return (
+                      <div className="w-full flex justify-center">
+                        <div
+                          className="w-full"
+                          style={{ maxWidth: item.width || 800 }}
+                        >
+                          <iframe
+                            src={item.src}
+                            width={item.width}
+                            height={item.height}
+                            style={{ border: "none", overflow: "hidden" }}
+                            scrolling="no"
+                            frameBorder="0"
+                            allow={item.allow}
+                            allowFullScreen={true}
+                            className="w-full max-w-full"
+                            title={`${modalClub.name}-video-${photoIndex}`}
+                          />
+                        </div>
+                      </div>
+                    );
+                  }
+
+                  // fallback
+                  return (
+                    <div className="text-sm text-gray-300">
+                      Contenido no soportado para previsualizar.
+                    </div>
+                  );
+                })()}
               </div>
 
               <button
@@ -434,24 +488,55 @@ export default function Argentinanight() {
               <div>
                 <div className="text-white font-semibold">{modalClub.name}</div>
                 <div className="text-xs text-gray-400">
-                  {modalClub.photos[photoIndex]?.split("/").pop()}
+                  {(() => {
+                    const item = modalClub.photos[photoIndex];
+                    if (typeof item === "string") return item.split("/").pop();
+                    if (item && item.type === "iframe")
+                      return "Video embed (Facebook)";
+                    return "";
+                  })()}
                 </div>
               </div>
 
               <div className="flex items-center gap-3">
-                <a
-                  href={modalClub.photos[photoIndex]}
-                  download
-                  className="px-3 py-2 bg-white/10 hover:bg-white/20 rounded text-white text-sm"
-                >
-                  Descargar
-                </a>
+                {(() => {
+                  const item = modalClub.photos[photoIndex];
+                  if (typeof item === "string") {
+                    return (
+                      <a
+                        href={item}
+                        download
+                        className="px-3 py-2 bg-white/10 hover:bg-white/20 rounded text-white text-sm"
+                      >
+                        Descargar
+                      </a>
+                    );
+                  }
+                  // si es iframe, ofrecer abrir en nueva pestaña
+                  if (item && item.type === "iframe") {
+                    return (
+                      <a
+                        href={item.src}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="px-3 py-2 bg-white/10 hover:bg-white/20 rounded text-white text-sm"
+                      >
+                        Abrir video
+                      </a>
+                    );
+                  }
+                  return null;
+                })()}
+
                 <button
                   onClick={() =>
                     navigator.share
                       ? navigator.share({
                           title: modalClub.name,
-                          url: modalClub.photos[photoIndex],
+                          url:
+                            typeof modalClub.photos[photoIndex] === "string"
+                              ? modalClub.photos[photoIndex]
+                              : window.location.href,
                         })
                       : alert("Compartir no soportado")
                   }

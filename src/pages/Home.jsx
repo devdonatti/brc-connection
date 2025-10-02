@@ -92,16 +92,26 @@ export default function Home() {
               </div>
 
               {/* Repetición de banners debajo (igual comportamiento) */}
-              <div className="grid grid-cols-3 gap-2 pt-2">
-                <div className="col-span-3">
+              <div className="grid grid-cols-3 mt-2 gap-2 pb-2">
+                <div className="col-span-2">
                   <BannerCard
                     item={{
-                      id: "banner-grande-2",
-                      img: "/fotos/publicidad/1 (4).jpeg",
+                      id: "banner-grande",
+                      img: "/fotos/boliches/brc/travel2.jpg",
+                    }}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div className="col-span-1">
+                  <BannerCard
+                    item={{
+                      id: "banner-chico",
+                      img: "/fotos/publicidad/facebook.jpg",
                     }}
                   />
                 </div>
               </div>
+
               <div className=" flex justify-center gap-4 bg-black/30 p-2 rounded shadow text-sm text-white/90">
                 <h1>Bariloche At Night</h1>
               </div>

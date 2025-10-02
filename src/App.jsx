@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HeroBanner from "./pages/HeroBanner";
 import Resto from "./components/Restos";
 import Argentinanight from "./components/Argentinanight";
+import Cbanight from "./components/Cbanight";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
           <Route path="/herobanner" element={<HeroBanner />} />
           <Route path="/restos" element={<Resto />} />
           <Route path="/argentinanight" element={<Argentinanight />} />
+          <Route path="/cbanight" element={<Cbanight />} />
         </Routes>
       </Layout>
     </Router>

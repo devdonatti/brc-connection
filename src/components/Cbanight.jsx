@@ -3,121 +3,46 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 /**
- * Argentinanight — Versión Bariloche con embed TikTok funcionando
- * - Colocar en src/components/Argentinanight.jsx
- * - Requisitos: Tailwind CSS
+ * Argentinanight — Versión reducida que muestra **solo** Córdoba
+ * - Cambié el título a "Cordoba At Night"
+ * - Eliminé todas las regiones que no sean Córdoba
+ * - Conservé la UI, el modal y el carrusel de destacados
  *
- * Nota: TikTok carga un script externo (https://www.tiktok.com/embed.js).
- * Asegurate de que tu CSP/hosting permita ese dominio.
+ * Requisitos: Tailwind CSS en tu proyecto.
  */
 
-/* ---------------- TikTokEmbed: subcomponente ---------------- */
-function TikTokEmbed({ videoId, author, captionHtml }) {
-  const mountRef = useRef(null);
-
-  useEffect(() => {
-    const mount = mountRef.current;
-    if (!mount) return;
-
-    // Insertamos el blockquote (igual que el embed oficial)
-    const blockquote = document.createElement("blockquote");
-    blockquote.className = "tiktok-embed";
-    blockquote.setAttribute(
-      "cite",
-      `https://www.tiktok.com/@${author}/video/${videoId}`
-    );
-    blockquote.setAttribute("data-video-id", videoId);
-    blockquote.style.maxWidth = "605px";
-    blockquote.style.minWidth = "325px";
-
-    const section = document.createElement("section");
-    // captionHtml se inserta tal cual (trusted). Si viene de usuario, sanitizar.
-    section.innerHTML = captionHtml;
-    blockquote.appendChild(section);
-
-    // Limpiamos e insertamos
-    mount.innerHTML = "";
-    mount.appendChild(blockquote);
-
-    // Insertar el script de TikTok para que transforme el blockquote
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "https://www.tiktok.com/embed.js";
-    document.body.appendChild(script);
-
-    // cleanup: removemos lo que agregamos (blockquote se limpia con mount.innerHTML = "")
-    return () => {
-      if (script.parentNode) script.parentNode.removeChild(script);
-      if (mount) mount.innerHTML = "";
-    };
-  }, [videoId, author, captionHtml]);
-
-  return (
-    <div className="w-full flex justify-center my-6 px-4">
-      <div
-        ref={mountRef}
-        className="w-full max-w-[600px] rounded-lg overflow-hidden bg-gray-900/10 p-2"
-        aria-hidden="false"
-      />
-    </div>
-  );
-}
-
-/* ---------------- Datos Bariloche ---------------- */
-const barilocheClubs = [
+const cordobaClubs = [
   {
-    name: "Grisu",
-    logo: "/fotos/boliches/brc/grisulogo.jpg",
+    name: "Molino Rojo",
+    logo: "/fotos/boliches/cba/logomr.jpg",
     photos: [
-      "/fotos/boliches/brc/grisu1.jpg",
-      "/fotos/boliches/brc/grisu2.jpg",
-      "/fotos/boliches/brc/grisu3.jpg",
-      "/fotos/boliches/brc/grisu4.jpg",
-      "/fotos/boliches/brc/grisu5.jpg",
+      "/fotos/boliches/cba/molinorojo1.jpg",
+      "/fotos/boliches/cba/molinorojo2.jpg",
+      "/fotos/boliches/cba/molinorojo3.jpg",
+      "/fotos/boliches/cba/molinorojo4.jpg",
+      "/fotos/boliches/cba/molinorojo5.jpg",
     ],
   },
   {
-    name: "Rocket",
-    logo: "/fotos/boliches/brc/rocket.png",
+    name: "Keops",
+    logo: "/fotos/boliches/cba/logokeops.jpg",
     photos: [
-      "/fotos/boliches/brc/rocket1.jpg",
-      "/fotos/boliches/brc/rocket2.jpg",
-      "/fotos/boliches/brc/rocket3.jpg",
-      "/fotos/boliches/brc/rocket4.jpg",
-      "/fotos/boliches/brc/rocket5.jpg",
+      "/fotos/boliches/cba/keops1.jpg",
+      "/fotos/boliches/cba/keops2.jpg",
+      "/fotos/boliches/cba/keops3.jpg",
+      "/fotos/boliches/cba/keops4.jpg",
+      "/fotos/boliches/cba/keops5.jpg",
     ],
   },
   {
-    name: "ByPass",
-    logo: "/fotos/boliches/brc/logobypass.png",
+    name: "Khalama",
+    logo: "/fotos/boliches/cba/logokhalama.jpg",
     photos: [
-      "/fotos/boliches/brc/bypass1.jpg",
-      "/fotos/boliches/brc/bypass2.jpg",
-      "/fotos/boliches/brc/bypass3.jpg",
-      "/fotos/boliches/brc/bypass4.jpg",
-      "/fotos/boliches/brc/bypass5.jpg",
-    ],
-  },
-  {
-    name: "Cerebro",
-    logo: "/fotos/boliches/brc/logocerebro.jpg",
-    photos: [
-      "/fotos/boliches/brc/cerebro1.jpg",
-      "/fotos/boliches/brc/cerebro2.jpg",
-      "/fotos/boliches/brc/cerebro3.jpg",
-      "/fotos/boliches/brc/cerebro4.jpg",
-      "/fotos/boliches/brc/cerebro5.jpg",
-    ],
-  },
-  {
-    name: "Genux",
-    logo: "/fotos/boliches/brc/logogenux.jpg",
-    photos: [
-      "/fotos/boliches/brc/genux1.jpg",
-      "/fotos/boliches/brc/genux2.jpg",
-      "/fotos/boliches/brc/genux3.jpg",
-      "/fotos/boliches/brc/genux4.jpg",
-      "/fotos/boliches/brc/genux5.jpg",
+      "/fotos/boliches/cba/khalama1.jpg",
+      "/fotos/boliches/cba/khalama2.jpg",
+      "/fotos/boliches/cba/khalama3.jpg",
+      "/fotos/boliches/cba/khalama4.jpg",
+      "/fotos/boliches/cba/khalama5.jpg",
     ],
   },
 ];
@@ -136,8 +61,8 @@ export default function Argentinanight() {
   const touchStartX = useRef(null);
   const touchDeltaX = useRef(0);
 
-  // featured clubs: solo Bariloche
-  const featuredClubs = barilocheClubs.slice(0, 6);
+  // featured clubs: solo Córdoba
+  const featuredClubs = cordobaClubs.slice(0, 6);
 
   // autoplay featured subtle
   useEffect(() => {
@@ -235,48 +160,33 @@ export default function Argentinanight() {
         <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
         <div
           className="h-56 md:h-72 lg:h-96 bg-center bg-cover flex items-center justify-center"
-          style={{ backgroundImage: `url('/fotos/portada/hero-brc.jpg')` }}
+          style={{ backgroundImage: `url('/fotos/portada/hero-cba.jpg')` }}
         >
           <div className="relative z-10 text-center px-2">
             <h1 className="text-3xl md:text-5xl text-white font-extrabold drop-shadow-lg">
-              Bariloche At Night
+              Cordoba At Night
             </h1>
             <p className="mt-2 text-sm md:text-base text-gray-200/90">
               Guía visual de boliches, fotos y experiencias nocturnas en
-              Bariloche.
+              Córdoba.
             </p>
             <div className="mt-4 flex justify-center gap-3">
               <button
                 onClick={() => {
                   const el = document.querySelector(
-                    "[data-region='Bariloche At Night']"
+                    "[data-region='Cordoba At Night']"
                   );
                   if (el)
                     el.scrollIntoView({ behavior: "smooth", block: "center" });
                 }}
                 className="bg-white text-gray-900 px-4 py-2 rounded-md font-medium shadow"
               >
-                Ver Bariloche
+                Ver Córdoba
               </button>
             </div>
           </div>
         </div>
       </div>
-
-      {/* TikTok Embed (insertado de forma correcta) */}
-      <TikTokEmbed
-        videoId="7543808966908824850"
-        author="travelrockoficial"
-        captionHtml={`
-          <a target="_blank" title="@travelrockoficial" href="https://www.tiktok.com/@travelrockoficial?refer=embed">@travelrockoficial</a>
-          Día de cerro catedral en nuestra pista exclusiva 🤯🖤🤪
-          <a title="travelrock" target="_blank" href="https://www.tiktok.com/tag/travelrock?refer=embed"> #travelrock</a>
-          <a title="fyp" target="_blank" href="https://www.tiktok.com/tag/fyp?refer=embed"> #fyp</a>
-          <a title="parati" target="_blank" href="https://www.tiktok.com/tag/parati?refer=embed"> #parati</a>
-          <a title="cerrocatedral" target="_blank" href="https://www.tiktok.com/tag/cerrocatedral?refer=embed"> #cerrocatedral</a>
-          <a target="_blank" title="♬ sonido original - Jake_letras" href="https://www.tiktok.com/music/sonido-original-7205451331992685317?refer=embed"> ♬ sonido original - Jake_letras</a>
-        `}
-      />
 
       {/* FEATURED ROW (carrusel horizontal simple) */}
       <section className="mb-10">
@@ -345,12 +255,12 @@ export default function Argentinanight() {
         </div>
       </section>
 
-      {/* BARILOCHE: filas horizontales centradas con snap — grid en pantallas grandes */}
-      <section data-region="Bariloche At Night" className="mb-12">
+      {/* CÓRDOBA: filas horizontales centradas con snap — grid en pantallas grandes */}
+      <section data-region="Cordoba At Night" className="mb-12">
         <div className="flex items-baseline justify-between mb-4">
-          <h3 className="text-2xl font-semibold">Bariloche At Night</h3>
+          <h3 className="text-2xl font-semibold">Cordoba At Night</h3>
           <div className="text-sm text-gray-500">
-            Explorá {barilocheClubs.length} boliches
+            Explorá {cordobaClubs.length} boliches
           </div>
         </div>
 
@@ -360,7 +270,7 @@ export default function Argentinanight() {
             className="flex gap-6 overflow-x-auto py-4 px-4 snap-x snap-mandatory justify-start"
             style={{ WebkitOverflowScrolling: "touch" }}
           >
-            {barilocheClubs.map((club, idx) => (
+            {cordobaClubs.map((club, idx) => (
               <article
                 key={`${club.name}-${idx}`}
                 className="snap-center min-w-[260px] sm:min-w-[300px] flex-shrink-0 rounded-xl overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 shadow-lg transform hover:scale-[1.01] transition"
@@ -385,7 +295,7 @@ export default function Argentinanight() {
                     </div>
                   </div>
                   <div className="absolute top-3 left-3 bg-white/10 text-white text-xs px-2 py-1 rounded">
-                    BRC
+                    CBA
                   </div>
                 </div>
 
@@ -408,7 +318,7 @@ export default function Argentinanight() {
         {/* Desktop / large: grid to show all cards */}
         <div className="hidden lg:block">
           <div className="grid grid-cols-3 gap-8">
-            {barilocheClubs.map((club, idx) => (
+            {cordobaClubs.map((club, idx) => (
               <article
                 key={`${club.name}-${idx}`}
                 className="rounded-xl overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 shadow-lg transform hover:scale-[1.01] transition"
@@ -433,7 +343,7 @@ export default function Argentinanight() {
                     </div>
                   </div>
                   <div className="absolute top-3 left-3 bg-white/10 text-white text-xs px-2 py-1 rounded">
-                    BRC
+                    CBA
                   </div>
                 </div>
 
