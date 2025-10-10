@@ -17,6 +17,16 @@ const clubsByRegion = {
       photos: ["/fotos/restos/pym/pym2.jpg", "/fotos/restos/pym/pym3.jpg"],
     },
     {
+      name: "Club Fellini Bar",
+      logo: "/fotos/restos/fellini/fellini1.jpg",
+      photos: [
+        "/fotos/restos/fellini/fellini2.jpg",
+        "/fotos/restos/fellini/fellini3.jpg",
+        "/fotos/restos/fellini/fellini4.jpg",
+        "/fotos/restos/fellini/fellini5.jpg",
+      ],
+    },
+    {
       name: "Rock&Feller's",
       logo: "/fotos/restos/roquefeller/logorf.jpg",
       photos: [
@@ -208,7 +218,7 @@ export default function Argentinanight() {
                 }}
                 className="bg-gray-800 text-white px-4 py-2 rounded-md border border-white/10"
               >
-                Ver Córdoba
+                Ver Buenos Aires
               </button>
             </div>
           </div>

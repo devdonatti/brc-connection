@@ -43,13 +43,14 @@ export default function Header() {
     if (!path || path === "#") return;
     navigate(path);
     setOpen(false); // cierra menú móvil si estaba abierto
+    setSubmenuIndex(null);
   };
 
   return (
     <header className="sticky top-0 z-[9999] bg-gray-400/90 backdrop-blur-sm">
       <div className="flex justify-center">
         <div className="w-full max-w-[1200px] relative">
-          {/* Menú desktop */}
+          {/* Menú desktop (IGUAL que el original) */}
           <nav className="hidden md:flex w-full text-sm text-white/90 border-y border-white/20">
             {links.map((link, i) => (
               <div
@@ -87,58 +88,100 @@ export default function Header() {
             ))}
           </nav>
 
+          {/* Botón hamburguesa mobile (misma posición que tenías) */}
           {/* Botón hamburguesa mobile */}
           <button
-            className="md:hidden p-1 rounded-md focus:outline-none focus:ring-1 focus:ring-white/30 absolute right-2 top-2"
+            className="md:hidden p-1 rounded-md focus:outline-none focus:ring-1 focus:ring-black absolute right-2 "
             onClick={() => setOpen((s) => !s)}
             aria-expanded={open}
             aria-label={open ? "Cerrar menú" : "Abrir menú"}
           >
-            {open ? <X size={20} /> : <Menu size={20} />}
+            {open ? (
+              <X size={20} className="text-black" />
+            ) : (
+              <Menu size={20} className="text-black" />
+            )}
           </button>
         </div>
       </div>
 
-      {/* Menú móvil */}
-      {open && (
-        <div className="md:hidden">
-          <div className="w-full bg-gray-500/95 border-t border-white/5 shadow-md z-[9999]">
-            <nav className="flex flex-col items-center gap-2 py-3 text-white/90">
-              {links.map((link, i) => (
-                <div key={i} className="w-full text-center">
-                  {/* Link directo */}
-                  {!link.submenu ? (
+      {/* MENÚ MÓVIL MEJORADO (solo esta parte cambia) */}
+      <div
+        className={`md:hidden transition-[max-height,opacity] duration-300 ease-in-out overflow-hidden ${
+          open ? "max-h-[900px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="w-full bg-gray-500/95 border-t border-white/5 shadow-md">
+          <nav className="flex flex-col gap-2 py-3 px-3 text-white/95">
+            {links.map((link, i) => (
+              <div key={i} className="w-full">
+                {/* Si no tiene submenu: botón grande y accesible */}
+                {!link.submenu ? (
+                  <button
+                    className="block w-full text-left py-3 text-base hover:bg-white/8 rounded px-3"
+                    onClick={() => handleNavigate(link.path)}
+                  >
+                    {link.label}
+                  </button>
+                ) : (
+                  /* Acordeón simple por cada link con submenu */
+                  <div className="w-full">
                     <button
-                      className="block w-full py-1 text-sm hover:text-accent transition cursor-pointer"
-                      onClick={() => handleNavigate(link.path)}
+                      onClick={() =>
+                        setSubmenuIndex((prev) => (prev === i ? null : i))
+                      }
+                      className="w-full flex items-center justify-between py-3 px-3 hover:bg-white/8 rounded"
+                      aria-expanded={submenuIndex === i}
                     >
-                      {link.label}
+                      <span className="text-base">{link.label}</span>
+                      <ChevronDown
+                        size={18}
+                        className={`transition-transform ${
+                          submenuIndex === i ? "rotate-180" : "rotate-0"
+                        }`}
+                      />
                     </button>
-                  ) : (
-                    // Submenu mobile
-                    <details className="w-full">
-                      <summary className="px-3 py-1 text-sm cursor-pointer hover:bg-white/10 rounded text-center">
-                        Ver {link.label}
-                      </summary>
-                      <div className="flex flex-col gap-1 mt-1">
+
+                    {/* Submenu expandible */}
+                    <div
+                      className={`overflow-hidden transition-[max-height,opacity] duration-300 ${
+                        submenuIndex === i
+                          ? "max-h-40 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <div className="flex flex-col gap-1 mt-1 pl-4 pr-2 pb-2">
                         {link.submenu.map((item, j) => (
                           <button
                             key={j}
-                            className="px-3 py-1 text-sm hover:bg-white/10 rounded text-center cursor-pointer"
+                            className="py-2 text-sm text-left hover:bg-white/6 rounded px-2"
                             onClick={() => handleNavigate(item.path)}
                           >
                             {item.label}
                           </button>
                         ))}
                       </div>
-                    </details>
-                  )}
-                </div>
-              ))}
-            </nav>
-          </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+
+            {/* Acción extra abajo (Contacto) */}
+            <div className="pt-2 px-3">
+              <button
+                onClick={() => {
+                  navigate("/contacto");
+                  setOpen(false);
+                }}
+                className="w-full py-3 bg-white/5 hover:bg-white/10 rounded text-white text-center"
+              >
+                Contacto
+              </button>
+            </div>
+          </nav>
         </div>
-      )}
+      </div>
     </header>
   );
 }

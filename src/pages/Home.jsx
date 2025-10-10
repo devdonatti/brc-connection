@@ -1,4 +1,5 @@
 // src/pages/Home.jsx
+import { useState } from "react";
 import React from "react";
 import Header from "../components/Layout/Header";
 import SidebarLeft from "../components/Layout/SidebarLeft";
@@ -12,6 +13,19 @@ import MusicPlayer from "../components/MusicPlayer";
 import BannerCard from "../components/BannerCard";
 
 export default function Home() {
+  const videos = [
+    "/videos/keops.mp4",
+    "/videos/pueblo.mp4",
+    "/videos/molino.mp4",
+    "/videos/khalama.mp4",
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const handleVideoEnd = () => {
+    // Avanzar al siguiente video o volver al primero si termina el último
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % videos.length);
+  };
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden">
       {/* CONTENEDOR UNIFICADO: ahora responsivo y más angosto en mobile */}
@@ -64,31 +78,36 @@ export default function Home() {
 
               {/* Banners: 2/3 + 1/3 */}
               <div className="grid grid-cols-3 mt-2 gap-2 pb-2">
-                <div className="col-span-2">
-                  <BannerCard
-                    item={{
-                      id: "banner-grande",
-                      img: "/fotos/publicidad/1 (4).jpeg",
-                    }}
-                  />
-                </div>
-                <div className="col-span-1">
-                  <BannerCard
-                    item={{
-                      id: "banner-chico",
-                      img: "/fotos/publicidad/facebook.jpg",
-                    }}
+                <div className="col-span-3">
+                  <video
+                    key={currentIndex} // Fuerza el reinicio al cambiar de video
+                    src={videos[currentIndex]}
+                    autoPlay
+                    muted
+                    playsInline
+                    onEnded={handleVideoEnd}
+                    className="w-full h-auto rounded-lg object-cover"
                   />
                 </div>
               </div>
+
               <div className=" flex items-center justify-center gap-4 bg-white p-2 rounded shadow text-sm text-black">
                 <h1>Lo esperaste durante tantos años</h1>
                 <img className="h-16 w-16" src="fotos/logoo.png" alt="" />
               </div>
 
               {/* Sección Destacados */}
-              <div className="rounded p-4 bg-white">
+              <div className="rounded p-4 bg-black">
                 <FeaturedGrid items={banners} />
+              </div>
+              <div className="col-span-2">
+                <BannerCard
+                  item={{
+                    id: "banner-grande",
+                    img: "/fotos/publicidad/youtube.jpg",
+                  }}
+                  className="w-full h-full object-contain"
+                />
               </div>
 
               {/* Repetición de banners debajo (igual comportamiento) */}
@@ -102,6 +121,7 @@ export default function Home() {
                     className="w-full h-full object-contain"
                   />
                 </div>
+
                 <div className="col-span-1">
                   <BannerCard
                     item={{
@@ -144,6 +164,19 @@ export default function Home() {
       </div>
 
       <Footer />
+      {/* Botón flotante de WhatsApp */}
+      <a
+        href="https://wa.me/1170618004"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-4 right-4 z-50 bg-green-500 rounded-full p-3 shadow-lg hover:scale-110 transition-transform"
+      >
+        <img
+          src="/fotos/publicidad/wplogo.jpg"
+          alt="WhatsApp"
+          className="w-10 h-10"
+        />
+      </a>
     </div>
   );
 }

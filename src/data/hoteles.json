@@ -1,0 +1,442 @@
+{
+  "provincias": [
+    {
+      "key": "ba",
+      "nombre": "Buenos Aires",
+      "hoteles": [
+        {
+          "id": "ba-1",
+          "name": "Hotel BA 1",
+          "stars": 1,
+          "img": "/fotos/alojamientos/bsas/hotel1.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/232171-0_hotel-patios-de-recoleta"
+        },
+        {
+          "id": "ba-2",
+          "name": "Hotel BA 2",
+          "stars": 1,
+          "img": "/fotos/alojamientos/bsas/hotel2.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/486521-0_hotel-petit-recoleta-suites"
+        },
+        {
+          "id": "ba-3",
+          "name": "Hotel BA 3",
+          "stars": 1,
+          "img": "/fotos/alojamientos/bsas/hotel3.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/486511-0_hotel-gran-sarmiento"
+        },
+        {
+          "id": "ba-4",
+          "name": "Hotel BA 4",
+          "stars": 1,
+          "img": "/fotos/alojamientos/bsas/hotel4.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/616024-0_hotel-sofitel-la-reserva-cardales?atr_trk=G4-24-1-hot-ar-dsa&gad_source=1&gad_campaignid=22441328345&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58QDXdoURibGm2c-eXiRLdmFrXu4lOWc21HqvZyOq5AyLKFiuSokPIaAhYvEALw_wcB"
+        },
+        {
+          "id": "ba-5",
+          "name": "Hotel BA 5",
+          "stars": 2,
+          "img": "/fotos/alojamientos/bsas/hotel5.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/1434775-0_hotel-howard-johnson-resort-and-spa-escobar?atr_trk=G4-24-1-hot-ar-dsa&gad_source=1&gad_campaignid=22441328345&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8&gclid=Cj0KCQjw3aLHBhDTARIsAIRij59KopGIVM57Uuuc_v80XkTmdCo7669R_xXU7I9jCwUX6bPde6LYJl4aAg1UEALw_wcB"
+        },
+        {
+          "id": "ba-6",
+          "name": "Hotel BA 6",
+          "stars": 2,
+          "img": "/fotos/alojamientos/bsas/hotel6.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/313565-0_tucuman-palace-hotel"
+        },
+        {
+          "id": "ba-7",
+          "name": "Hotel BA 7",
+          "stars": 2,
+          "img": "/fotos/alojamientos/bsas/hotel7.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/154065-0_hotel-nunez-suites"
+        },
+        {
+          "id": "ba-8",
+          "name": "Hotel BA 8",
+          "stars": 2,
+          "img": "/fotos/alojamientos/bsas/hotel8.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/312708-0_hotel-carrara"
+        },
+        {
+          "id": "ba-9",
+          "name": "Hotel BA 9",
+          "stars": 3,
+          "img": "/fotos/alojamientos/bsas/hotel9.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/96855-0_hotel-8-de-octubre?_gl=1*i0mo2z*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5_GT5NEzDLElRwzlakTogB1X9G6SfgiHLsfeGq9JXYUeA02REjYEZEaAm8cEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ba-10",
+          "name": "Hotel BA 10",
+          "stars": 3,
+          "img": "/fotos/alojamientos/bsas/hotel10.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/176838-0_two-hotel-buenos-aires?_gl=1*i0mo2z*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5_GT5NEzDLElRwzlakTogB1X9G6SfgiHLsfeGq9JXYUeA02REjYEZEaAm8cEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ba-11",
+          "name": "Hotel BA 11",
+          "stars": 3,
+          "img": "/fotos/alojamientos/bsas/hotel11.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/394918-0_hotel-colonial?_gl=1*1mzc1kt*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5_GT5NEzDLElRwzlakTogB1X9G6SfgiHLsfeGq9JXYUeA02REjYEZEaAm8cEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ba-12",
+          "name": "Hotel BA 12",
+          "stars": 3,
+          "img": "/fotos/alojamientos/bsas/hotel12.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/24118-0_hotel-crisol-suites-catalinas?_gl=1*1mzc1kt*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5_GT5NEzDLElRwzlakTogB1X9G6SfgiHLsfeGq9JXYUeA02REjYEZEaAm8cEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ba-13",
+          "name": "Hotel BA 13",
+          "stars": 4,
+          "img": "/fotos/alojamientos/bsas/hotel13.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/352309-0_hotel-howard-johnson-pilar-resort-spa-i-convention-center?atr_trk=G4-24-1-hot-ar-dsa&gad_source=1&gad_campaignid=22441328345&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5_nxnpXh1LVy3jeBrkJ2udfdvgyqCLasVZL0eWpct1nbme0o3bQoqsaAmxtEALw_wcB"
+        },
+        {
+          "id": "ba-14",
+          "name": "Hotel BA 14",
+          "stars": 4,
+          "img": "/fotos/alojamientos/bsas/hotel14.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/164148-0_cyan-recoleta-hotel"
+        },
+        {
+          "id": "ba-15",
+          "name": "Hotel BA 15",
+          "stars": 4,
+          "img": "/fotos/alojamientos/bsas/hotel15.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/74418-0_474-buenos-aires-hotel"
+        },
+        {
+          "id": "ba-16",
+          "name": "Hotel BA 16",
+          "stars": 4,
+          "img": "/fotos/alojamientos/bsas/hotel16.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/163526-0_hotel-bys-palermo"
+        },
+        {
+          "id": "ba-17",
+          "name": "Hotel BA 17",
+          "stars": 5,
+          "img": "/fotos/alojamientos/bsas/hotel17.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/69854-0_hotel-casa-lucia"
+        },
+        {
+          "id": "ba-18",
+          "name": "Hotel BA 18",
+          "stars": 5,
+          "img": "/fotos/alojamientos/bsas/hotel18.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/10428-0_alvear-palace-hotel"
+        },
+        {
+          "id": "ba-19",
+          "name": "Hotel BA 19",
+          "stars": 5,
+          "img": "/fotos/alojamientos/bsas/hotel19.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/110297-0_nh-gran-hotel-provincial"
+        },
+        {
+          "id": "ba-20",
+          "name": "Hotel BA 20",
+          "stars": 5,
+          "img": "/fotos/alojamientos/bsas/hotel20.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/74409-0_sheraton-buenos-aires-hotel-i-convention-center?atr_trk=G4-24-1-hot-ar-dsa&gad_source=1&gad_campaignid=22441328345&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58oUUIKJ9os6JhubB5NBfVeRdcEbaeg1N-0kLWWr4M84RQqvEx6e_YaAulpEALw_wcB"
+        }
+      ]
+    },
+    {
+      "key": "brc",
+      "nombre": "Bariloche",
+      "hoteles": [
+        {
+          "id": "brc-1",
+          "name": "Hotel BRC 1",
+          "stars": 1,
+          "img": "/fotos/alojamientos/brc/hotel1.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/236915-0_hotel-tivoli?_gl=1*1psp6o1*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-2",
+          "name": "Hotel BRC 2",
+          "stars": 1,
+          "img": "/fotos/alojamientos/brc/hotel2.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/237185-0_hotel-antartida?_gl=1*yxvovc*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-3",
+          "name": "Hotel BRC 3",
+          "stars": 1,
+          "img": "/fotos/alojamientos/brc/hotel3.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/848564-0_tierra-gaucha-hotel?_gl=1*yxvovc*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-4",
+          "name": "Hotel BRC 4",
+          "stars": 1,
+          "img": "/fotos/alojamientos/brc/hotel4.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/237174-0_monte-cervino-hotel-i-spa?_gl=1*1b6ko34*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-5",
+          "name": "Hotel BRC 5",
+          "stars": 2,
+          "img": "/fotos/alojamientos/brc/hotel5.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/118527-0_hotel-premier-bariloche?_gl=1*1v42g3w*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-6",
+          "name": "Hotel BRC 6",
+          "stars": 2,
+          "img": "/fotos/alojamientos/brc/hotel6.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/237138-0_hotel-quimelen-lodge?_gl=1*1v42g3w*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-7",
+          "name": "Hotel BRC 7",
+          "stars": 2,
+          "img": "/fotos/alojamientos/brc/hotel7.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/236896-0_hotel-aguas-del-sur?_gl=1*ajpqok*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-8",
+          "name": "Hotel BRC 8",
+          "stars": 2,
+          "img": "/fotos/alojamientos/brc/hotel8.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/237169-0_hotel-internacional?_gl=1*ajpqok*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-9",
+          "name": "Hotel BRC 9",
+          "stars": 3,
+          "img": "/fotos/alojamientos/brc/hotel9.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/527127-0_hotel-presidente-ski?_gl=1*1g4m7uv*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-10",
+          "name": "Hotel BRC 10",
+          "stars": 3,
+          "img": "/fotos/alojamientos/brc/hotel10.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/74367-0_hotel-nahuel-huapi?_gl=1*1g4m7uv*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-11",
+          "name": "Hotel BRC 11",
+          "stars": 3,
+          "img": "/fotos/alojamientos/brc/hotel11.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/115467-0_best-western-villa-sofia-apart-hotel?_gl=1*1g4m7uv*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-12",
+          "name": "Hotel BRC 12",
+          "stars": 3,
+          "img": "/fotos/alojamientos/brc/hotel12.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/120739-0_hotel-tirol?_gl=1*1g4m7uv*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-13",
+          "name": "Hotel BRC 13",
+          "stars": 4,
+          "img": "/fotos/alojamientos/brc/hotel13.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/94885-0_hotel-cristal?_gl=1*133y6pk*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-14",
+          "name": "Hotel BRC 14",
+          "stars": 4,
+          "img": "/fotos/alojamientos/brc/hotel14.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/74375-0_hotel-sol-del-nahuel?_gl=1*133y6pk*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-15",
+          "name": "Hotel BRC 15",
+          "stars": 4,
+          "img": "/fotos/alojamientos/brc/hotel15.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/74417-0_hotel-design-suites-bariloche?_gl=1*133y6pk*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-16",
+          "name": "Hotel BRC 16",
+          "stars": 4,
+          "img": "/fotos/alojamientos/brc/hotel16.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/35132-0_hotel-kenton-palace-bariloche?_gl=1*p9uy3k*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-17",
+          "name": "Hotel BRC 17",
+          "stars": 5,
+          "img": "/fotos/alojamientos/brc/hotel17.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/96926-0_el-casco-art-hotel?_gl=1*bxdh6f*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-18",
+          "name": "Hotel BRC 18",
+          "stars": 5,
+          "img": "/fotos/alojamientos/brc/hotel18.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/146207-0_hotel-charming-luxury-lodge-i-private-spa?_gl=1*1y8co6n*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-19",
+          "name": "Hotel BRC 19",
+          "stars": 5,
+          "img": "/fotos/alojamientos/brc/hotel19.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/24347-0_hotel-penon-del-lago?_gl=1*1y8co6n*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-20",
+          "name": "Hotel BRC 20",
+          "stars": 5,
+          "img": "/fotos/alojamientos/brc/hotel20.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/237211-0_hotel-pire-hue-lodge?_gl=1*1y8co6n*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        }
+      ]
+    },
+    {
+      "key": "ros",
+      "nombre": "Rosario",
+      "hoteles": [
+        {
+          "id": "ros-1",
+          "name": "Hotel Ros 1",
+          "stars": 1,
+          "img": "/fotos/alojamientos/ros/hotel1.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/1259272-0_hostal-hostel-la-casa-de-pandora-i-cafe-bar?_gl=1*5oewlp*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-2",
+          "name": "Hotel Ros 2",
+          "stars": 1,
+          "img": "/fotos/alojamientos/ros/hotel2.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/232085-0_hostal-bon-voyage-hostel-boutique?_gl=1*5oewlp*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-3",
+          "name": "Hotel Ros 3",
+          "stars": 1,
+          "img": "/fotos/alojamientos/ros/hotel3.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/82906-0_hostal-hostel-la-comunidad?_gl=1*1et78ys*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-4",
+          "name": "Hotel Ros 4",
+          "stars": 1,
+          "img": "/fotos/alojamientos/ros/hotel4.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/82906-0_hostal-hostel-la-comunidad?_gl=1*1et78ys*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-5",
+          "name": "Hotel Ros 5",
+          "stars": 2,
+          "img": "/fotos/alojamientos/ros/hotel5.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/118533-0_zurich-hotel?_gl=1*9t931u*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-6",
+          "name": "Hotel Ros 6",
+          "stars": 2,
+          "img": "/fotos/alojamientos/ros/hotel6.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/118532-0_necof-hotel?_gl=1*9t931u*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-7",
+          "name": "Hotel Ros 7",
+          "stars": 2,
+          "img": "/fotos/alojamientos/ros/hotel7.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/2360918-0_altea-hotel-de-rosario?_gl=1*9t931u*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-8",
+          "name": "Hotel Ros 8",
+          "stars": 2,
+          "img": "/fotos/alojamientos/ros/hotel8.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/482990-0_hotel-mitre?_gl=1*1vwql0q*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-9",
+          "name": "Hotel Ros 9",
+          "stars": 3,
+          "img": "/fotos/alojamientos/ros/hotel9.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/24374-0_hotel-plaza-real-suites?_gl=1*m365wx*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-10",
+          "name": "Hotel Ros 10",
+          "stars": 3,
+          "img": "/fotos/alojamientos/ros/hotel10.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/24373-0_majestic-hotel-rosario?_gl=1*m365wx*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-11",
+          "name": "Hotel Ros 11",
+          "stars": 3,
+          "img": "/fotos/alojamientos/ros/hotel11.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/192185-0_hotel-1495-apart?_gl=1*16b1grt*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-12",
+          "name": "Hotel Ros 12",
+          "stars": 3,
+          "img": "/fotos/alojamientos/ros/hotel12.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/161151-0_hotel-solans-republica?_gl=1*16b1grt*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-13",
+          "name": "Hotel Ros 13",
+          "stars": 4,
+          "img": "/fotos/alojamientos/ros/hotel13.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/24370-0_hotel-solans-libertador?_gl=1*1tpdbko*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-14",
+          "name": "Hotel Ros 14",
+          "stars": 4,
+          "img": "/fotos/alojamientos/ros/hotel14.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/109954-0_hotel-esplendor-savoy-rosario?_gl=1*1tpdbko*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-15",
+          "name": "Hotel Ros 15",
+          "stars": 4,
+          "img": "/fotos/alojamientos/ros/hotel15.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/313489-0_amerian-puerto-rosario-hotel?_gl=1*1tpdbko*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-16",
+          "name": "Hotel Ros 16",
+          "stars": 4,
+          "img": "/fotos/alojamientos/ros/hotel16.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/675445-0_puerto-norte-design-hotel?_gl=1*1abme1f*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-17",
+          "name": "Hotel Ros 17",
+          "stars": 5,
+          "img": "/fotos/alojamientos/ros/hotel17.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/122370-0_hotel-pullman-city-center-rosario?_gl=1*vdf5qj*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-18",
+          "name": "Hotel Ros 18",
+          "stars": 5,
+          "img": "/fotos/alojamientos/ros/hotel18.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/75178-0_ros-tower-hotel?_gl=1*vdf5qj*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-19",
+          "name": "Hotel Ros 19",
+          "stars": 5,
+          "img": "/fotos/alojamientos/ros/hotel19.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/1615029-0_hotel-casino-pullman-city-center-rosario?_gl=1*1mcexk2*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "ros-20",
+          "name": "Hotel Ros 20",
+          "stars": 5,
+          "img": "/fotos/alojamientos/ros/hotel20.jpg",
+          "url": "https://www.atrapalo.com.ar/hoteles/87297-0_hotel-howard-johnson-rosario?_gl=1*1kewqi*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij5-Nsbti1nP_4HwmJCaOT04RJ5ZWjdoUEnlVUiDqJfcAOptC03mycSMaAlIoEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        }
+      ]
+    }
+  ]
+}

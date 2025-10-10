@@ -7,6 +7,7 @@ import HeroBanner from "./pages/HeroBanner";
 import Resto from "./components/Restos";
 import Argentinanight from "./components/Argentinanight";
 import Cbanight from "./components/Cbanight";
+import Hospedajes from "./components/Hospedajes";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <Route path="/restos" element={<Resto />} />
           <Route path="/argentinanight" element={<Argentinanight />} />
           <Route path="/cbanight" element={<Cbanight />} />
+          <Route path="/hospedajes" element={<Hospedajes />} />
         </Routes>
       </Layout>
     </Router>
