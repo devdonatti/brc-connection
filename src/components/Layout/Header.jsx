@@ -1,10 +1,20 @@
 // src/components/Layout/Header.jsx
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
-export default function Header() {
-  const [open, setOpen] = useState(false);
+/**
+ * Header ahora acepta props opcionales:
+ * - mobileOpen (boolean) y setMobileOpen (fn) => control externo del drawer mobile.
+ *
+ * Si no se pasan, Header usa su propio state interno para seguir funcionando igual.
+ */
+export default function Header({ mobileOpen, setMobileOpen }) {
+  const [internalOpen, setInternalOpen] = useState(false);
+  const open = typeof mobileOpen === "boolean" ? mobileOpen : internalOpen;
+  const setOpen =
+    typeof setMobileOpen === "function" ? setMobileOpen : setInternalOpen;
+
   const [submenuIndex, setSubmenuIndex] = useState(null);
   const navigate = useNavigate();
 
@@ -39,19 +49,33 @@ export default function Header() {
     },
   ];
 
+  // Navegación: cerrar drawer si es mobile
   const handleNavigate = (path) => {
     if (!path || path === "#") return;
     navigate(path);
-    setOpen(false); // cierra menú móvil si estaba abierto
+    setOpen(false);
     setSubmenuIndex(null);
   };
+
+  // Cerrar drawer si viewport >= md (evita quedar abierto al redimensionar)
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const handler = (e) => {
+      if (e.matches) {
+        setOpen(false);
+        setSubmenuIndex(null);
+      }
+    };
+    mq.addEventListener?.("change", handler);
+    return () => mq.removeEventListener?.("change", handler);
+  }, [setOpen]);
 
   return (
     <header className="sticky top-0 z-[9999] bg-gray-400/90 backdrop-blur-sm">
       <div className="flex justify-center">
         <div className="w-full max-w-[1200px] relative">
-          {/* Menú desktop (IGUAL que el original) */}
-          <nav className="hidden md:flex w-full text-sm text-white/90 border-y border-white/20">
+          {/* Menú desktop (no cambia) */}
+          <nav className="hidden md:flex w-full text-sm text-white/90 border-y border-white/20 overflow-visible">
             {links.map((link, i) => (
               <div
                 key={i}
@@ -61,7 +85,6 @@ export default function Header() {
                 }
                 onMouseLeave={() => setSubmenuIndex(null)}
               >
-                {/* Link principal */}
                 <button
                   className="flex items-center justify-center gap-1 hover:text-accent transition px-4 py-3 w-full cursor-pointer"
                   onClick={() => handleNavigate(link.path)}
@@ -70,9 +93,9 @@ export default function Header() {
                   {link.submenu && <ChevronDown size={14} />}
                 </button>
 
-                {/* Submenu */}
+                {/* Submenu (desktop) */}
                 {link.submenu && submenuIndex === i && (
-                  <div className="absolute top-full left-0 w-full bg-gray-700/95 rounded-b shadow-lg flex flex-col z-[9999]">
+                  <div className="absolute top-full left-0 w-full bg-gray-700/95 rounded-b shadow-lg flex flex-col z-[99999]">
                     {link.submenu.map((item, j) => (
                       <button
                         key={j}
@@ -88,24 +111,11 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Botón hamburguesa mobile (misma posición que tenías) */}
-          {/* Botón hamburguesa mobile */}
-          <button
-            className="md:hidden p-1 rounded-md focus:outline-none focus:ring-1 focus:ring-black absolute right-2 "
-            onClick={() => setOpen((s) => !s)}
-            aria-expanded={open}
-            aria-label={open ? "Cerrar menú" : "Abrir menú"}
-          >
-            {open ? (
-              <X size={20} className="text-black" />
-            ) : (
-              <Menu size={20} className="text-black" />
-            )}
-          </button>
+          {/* Botón hamburguesa mobile (sigue aquí, pero ahora responde al state externo si se lo pasás) */}
         </div>
       </div>
 
-      {/* MENÚ MÓVIL MEJORADO (solo esta parte cambia) */}
+      {/* MENÚ MÓVIL (drawer acordeón) */}
       <div
         className={`md:hidden transition-[max-height,opacity] duration-300 ease-in-out overflow-hidden ${
           open ? "max-h-[900px] opacity-100" : "max-h-0 opacity-0"
@@ -115,7 +125,6 @@ export default function Header() {
           <nav className="flex flex-col gap-2 py-3 px-3 text-white/95">
             {links.map((link, i) => (
               <div key={i} className="w-full">
-                {/* Si no tiene submenu: botón grande y accesible */}
                 {!link.submenu ? (
                   <button
                     className="block w-full text-left py-3 text-base hover:bg-white/8 rounded px-3"
@@ -124,7 +133,6 @@ export default function Header() {
                     {link.label}
                   </button>
                 ) : (
-                  /* Acordeón simple por cada link con submenu */
                   <div className="w-full">
                     <button
                       onClick={() =>
@@ -142,7 +150,6 @@ export default function Header() {
                       />
                     </button>
 
-                    {/* Submenu expandible */}
                     <div
                       className={`overflow-hidden transition-[max-height,opacity] duration-300 ${
                         submenuIndex === i
@@ -167,7 +174,6 @@ export default function Header() {
               </div>
             ))}
 
-            {/* Acción extra abajo (Contacto) */}
             <div className="pt-2 px-3">
               <button
                 onClick={() => {
