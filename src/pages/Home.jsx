@@ -12,7 +12,8 @@ import Logo from "../components/Layout/Logo";
 import MusicPlayer from "../components/MusicPlayer";
 import BannerCard from "../components/BannerCard";
 import { menuItems } from "../data/menu"; // para el drawer izquierdo mobile
-
+import GroupRotator from "../components/GroupRotator";
+import RotatingLogo from "../components/RotatingLogo";
 export default function Home() {
   const videos = [
     "/videos/keops.mp4",
@@ -192,7 +193,6 @@ export default function Home() {
             {/* Main */}
             <main className="order-2 lg:order-1">
               <Hero image="/fotos/publicidad/portada.jpg" />
-
               {/* Barra de enlaces entre Hero y Destacados */}
               <div className=" flex justify-center gap-4 bg-black/30 p-2 rounded shadow text-sm text-white/90">
                 <a
@@ -209,7 +209,6 @@ export default function Home() {
                   Chat
                 </a>
               </div>
-
               {/* Banners: 2/3 + 1/3 */}
               <div className="grid grid-cols-3 mt-2 gap-2 pb-2">
                 <div className="col-span-3">
@@ -224,16 +223,88 @@ export default function Home() {
                   />
                 </div>
               </div>
-
-              <div className=" flex items-center justify-center gap-4 bg-white p-2 rounded shadow text-sm text-black">
+              <div className=" flex items-center justify-center gap-4 bg-white p-2 rounded shadow text-xl text-black">
                 <h1>Lo esperaste durante tantos años</h1>
-                <img className="h-16 w-16" src="fotos/logoo.png" alt="" />
+                <RotatingLogo src="/fotos/logoo.png" size="100px" />
               </div>
-
               {/* Sección Destacados */}
               <div className="rounded p-4 bg-black">
                 <FeaturedGrid items={banners} />
               </div>
+              <GroupRotator
+                groups={[
+                  {
+                    id: "hoteles-brc",
+                    logo: "/fotos/boliches/brc/travel.jpg",
+                    title: "Hoteles",
+                    altPrefix: "Hotel",
+                    link: "/hospedajes",
+                    images: [
+                      "/fotos/alojamientos/brc/travel/travel1.jpg",
+                      "/fotos/alojamientos/brc/travel/travel2.jpg",
+                      "/fotos/alojamientos/brc/travel/travel3.jpg",
+                      "/fotos/alojamientos/brc/travel/travel4.jpg",
+                      "/fotos/alojamientos/brc/travel/travel4.jpg",
+                      "/fotos/alojamientos/brc/travel/travel5.jpg",
+                      "/fotos/alojamientos/brc/travel/travel6.jpg",
+                      "/fotos/alojamientos/brc/travel/travel7.jpg",
+                      "/fotos/alojamientos/brc/travel/travel8.jpg",
+                      "/fotos/alojamientos/brc/travel/travel9.jpg",
+                      "/fotos/alojamientos/brc/travel/travel10.jpg",
+                      "/fotos/alojamientos/brc/travel/travel11.jpg",
+                      "/fotos/alojamientos/brc/travel/travel12.jpg",
+                      "/fotos/alojamientos/brc/travel/travel13.jpg",
+                      "/fotos/alojamientos/brc/travel/travel14.jpg",
+                      "/fotos/alojamientos/brc/travel/travel15.jpg",
+                      "/fotos/alojamientos/brc/travel/travel16.jpg",
+                    ],
+                  },
+                  {
+                    id: "restos-fellini",
+                    logo: "/fotos/restos/fellini/fellini1.jpg",
+                    title: "Restaurantes - Fellini",
+                    altPrefix: "Restaurante",
+                    link: "/restos",
+                    images: [
+                      "/fotos/restos/fellini/fellini2.jpg",
+                      "/fotos/restos/fellini/fellini3.jpg",
+                      "/fotos/restos/fellini/fellini4.jpg",
+                      "/fotos/restos/fellini/fellini5.jpg",
+                    ],
+                  },
+                  {
+                    id: "restos-sport",
+                    logo: "/fotos/restos/sport/sport1.jpg",
+                    title: "Restaurante - Paso Sport",
+                    altPrefix: "Restaurante",
+                    link: "/restos",
+                    images: [
+                      "/fotos/restos/sport/sport1.jpg",
+                      "/fotos/restos/sport/sport2.jpg",
+                      "/fotos/restos/sport/sport3.jpg",
+                      "/fotos/restos/sport/sport4.jpg",
+                    ],
+                  },
+                  {
+                    id: "boliches-brc",
+                    logo: "/fotos/boliches/brc/travel.jpg",
+                    title: "Boliches",
+                    altPrefix: "Boliche",
+                    link: "/brcnight",
+                    images: [
+                      "/fotos/boliches/brc/genux1.jpg",
+                      "/fotos/boliches/brc/grisu1.jpg",
+                      "/fotos/boliches/brc/bypass1.jpg",
+                      "/fotos/boliches/brc/rocket2.jpg",
+                      "/fotos/boliches/brc/cerebro2.jpg",
+                    ],
+                  },
+                ]}
+                imageInterval={3000}
+                cyclesPerGroup={1}
+                pauseOnHover={true}
+                showControls={true}
+              />
 
               <div className="col-span-2">
                 <BannerCard
@@ -244,7 +315,6 @@ export default function Home() {
                   className="w-full h-full object-contain"
                 />
               </div>
-
               {/* Repetición de banners debajo */}
               <div className="grid grid-cols-3 mt-2 gap-2 pb-2">
                 <div className="col-span-2">
@@ -266,11 +336,9 @@ export default function Home() {
                   />
                 </div>
               </div>
-
               <div className=" flex justify-center gap-4 bg-black/30 p-2 rounded shadow text-sm text-white/90">
                 <h1>Bariloche At Night</h1>
               </div>
-
               {/* Imagen de boliches */}
               <div>
                 <img

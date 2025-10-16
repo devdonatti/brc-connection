@@ -289,6 +289,34 @@
           "stars": 5,
           "img": "/fotos/alojamientos/brc/hotel20.jpg",
           "url": "https://www.atrapalo.com.ar/hoteles/237211-0_hotel-pire-hue-lodge?_gl=1*1y8co6n*_up*MQ..*_gs*MQ..&gclid=Cj0KCQjw3aLHBhDTARIsAIRij58PVJipGHRtHwUgT2K9ocfdW3jZdfszfDDebLDX_L4UyQ91Ox-eNkkaAqlTEALw_wcB&gbraid=0AAAAADqbZVuoAwlA69nFjAX6SmZ-bXBq8"
+        },
+        {
+          "id": "brc-21",
+          "name": "Hotel BRC 20",
+          "stars": 5,
+          "img": "/fotos/alojamientos/brc/travel/travel25.jpg",
+          "url": "https://www.travelrock.com.ar/"
+        },
+        {
+          "id": "brc-22",
+          "name": "Hotel BRC 20",
+          "stars": 5,
+          "img": "/fotos/alojamientos/brc/travel/travel26.jpg",
+          "url": "https://www.travelrock.com.ar/"
+        },
+        {
+          "id": "brc-23",
+          "name": "Hotel BRC 20",
+          "stars": 5,
+          "img": "/fotos/alojamientos/brc/travel/travel27.jpg",
+          "url": "https://www.travelrock.com.ar/"
+        },
+        {
+          "id": "brc-24",
+          "name": "Hotel BRC 20",
+          "stars": 5,
+          "img": "/fotos/alojamientos/brc/travel/travel28.jpg",
+          "url": "https://www.travelrock.com.ar/"
         }
       ]
     },

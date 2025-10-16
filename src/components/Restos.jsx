@@ -12,9 +12,20 @@ import { Link } from "react-router-dom";
 const clubsByRegion = {
   Rosario: [
     {
-      name: "Pan y Manteca",
-      logo: "/fotos/restos/pym/pym1.jpg",
-      photos: ["/fotos/restos/pym/pym2.jpg", "/fotos/restos/pym/pym3.jpg"],
+      name: "Paso Sport",
+      logo: "/fotos/restos/sport/sport1.jpg",
+      photos: [
+        "/fotos/restos/sport/sport1.jpg",
+        "/fotos/restos/sport/sport2.jpg",
+        "/fotos/restos/sport/sport3.jpg",
+        "/fotos/restos/sport/sport4.jpg",
+        "/fotos/restos/sport/sport5.jpg",
+        "/fotos/restos/sport/sport6.jpg",
+        "/fotos/restos/sport/sport7.jpg",
+        "/fotos/restos/sport/sport8.jpg",
+        "/fotos/restos/sport/sport9.jpg",
+        "/fotos/restos/sport/sport10.jpg",
+      ],
     },
     {
       name: "Club Fellini Bar",

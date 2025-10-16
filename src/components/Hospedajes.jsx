@@ -113,7 +113,7 @@ export default function HospedajesBRCConnection() {
                           href={hotel.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-sm px-3 py-1 rounded-lg border border-gray-200 hover:bg-gray-50"
+                          className="text-sm px-3 py-1 text-black rounded-lg border border-gray-200 hover:bg-gray-50"
                         >
                           Ver detalle
                         </a>

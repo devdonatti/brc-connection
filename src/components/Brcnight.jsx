@@ -89,7 +89,7 @@ const barilocheClubs = [
   },
   {
     name: "ByPass",
-    logo: "/fotos/boliches/brc/logobypass.png",
+    logo: "/fotos/boliches/brc/logobypass.jpg",
     photos: [
       "/fotos/boliches/brc/bypass1.jpg",
       "/fotos/boliches/brc/bypass2.jpg",
