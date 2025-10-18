@@ -231,6 +231,35 @@ export default function Home() {
               <div className="rounded p-4 bg-black">
                 <FeaturedGrid items={banners} />
               </div>
+              <div className="rounded p-4 bg-black">
+                <FeaturedGrid items={banners} />
+              </div>
+              <div className="rounded p-4 bg-black">
+                <FeaturedGrid items={banners} />
+              </div>
+              <GroupRotator
+                groups={[
+                  {
+                    id: "restos-sport",
+                    logo: "/fotos/logoo.jpg",
+                    title: "Agencia de viajes",
+                    altPrefix: "Restaurante",
+                    link: "/restos",
+                    images: [
+                      "/fotos/boliches/brc/travel.jpg",
+                      "/fotos/alojamientos/brc/travel/travel1.jpg",
+                      "/fotos/alojamientos/brc/travel/travel2.jpg",
+                      "/fotos/alojamientos/brc/travel/travel3.jpg",
+                      "/fotos/alojamientos/brc/travel/travel4.jpg",
+                      "/fotos/alojamientos/brc/travel/travel4.jpg",
+                    ],
+                  },
+                ]}
+                imageInterval={3000}
+                cyclesPerGroup={1}
+                pauseOnHover={true}
+                showControls={true}
+              />
               <GroupRotator
                 groups={[
                   {

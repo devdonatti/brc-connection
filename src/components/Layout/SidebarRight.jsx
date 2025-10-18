@@ -7,6 +7,10 @@ export default function SidebarRight() {
     "/fotos/publicidad/1 (3).jpeg",
     "/fotos/publicidad/1 (4).jpeg",
     "/fotos/publicidad/youtube1.jpg",
+    "/fotos/publicidad/face.jpg",
+    "/fotos/publicidad/tik.jpg",
+    "/fotos/publicidad/ig.jpg",
+    "/fotos/publicidad/wp.jpg",
 
     "/fotos/publicidad/afa.jpg",
     "/fotos/publicidad/facebook1.jpg",
@@ -16,7 +20,7 @@ export default function SidebarRight() {
   return (
     <aside className="w-full box-border">
       {/* Desktop: columna (oculto en mobile) */}
-      <div className="hidden lg:flex flex-col  w-full">
+      <div className="hidden lg:flex flex-col gap-2 object-cover  w-full">
         {ads.map((src, i) => (
           <a
             key={i}

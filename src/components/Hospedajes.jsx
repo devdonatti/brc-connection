@@ -70,7 +70,6 @@ export default function HospedajesBRCConnection() {
                   >
                     {/* clic en imagen abre url externa en nueva pestaña */}
                     <a
-                      href={hotel.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block relative h-44 md:h-36 lg:h-44 w-full bg-gray-100"
@@ -110,7 +109,6 @@ export default function HospedajesBRCConnection() {
                         </div>
 
                         <a
-                          href={hotel.url}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="text-sm px-3 py-1 text-black rounded-lg border border-gray-200 hover:bg-gray-50"
